@@ -5,7 +5,6 @@
 This is the High-for-Low (HFL) Boundary Detector documentation. Our method produces semantic boundaries and outperforms state-of-the-art methods in boundary detection on BSDS500 dataset. This work has been published in ICCV 2015 Conference.
 
 Citation:
-
 @InProceedings{gberta_2015_ICCV,
 author = {Gedas Bertasius and Jianbo Shi and Lorenzo Torresani},
 title = {High-for-Low and Low-for-High:
@@ -16,27 +15,21 @@ year = {2015}
 }
 
 ## Installation
-a) Caffe Deep Learning library and its Python Wrapper (http://caffe.berkeleyvision.org/installation.html)
+1. Caffe Deep Learning library and its Python Wrapper (http://caffe.berkeleyvision.org/installation.html)
 
 All of the required files are already included in the source code. However, Caffe and its python wrapper needs to be compiled according to the instructions in http://caffe.berkeleyvision.org/installation.html. 
 
-b) OpenCV 3.0 (source code is included in this package)
+2. OpenCV 3.0 (source code is included in this package)
  
 Open CV needs to be compiled using the following instructions:
-
 cd PATH/TO/opencv
-
 mkdir release
-
 cd release
-
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/path/to/local/install/directory/ -D WITH_CUDA=OFF ..
-
 make -j8
-
 make install
 
-c) Compiling SE_detector.cpp
+3. Compiling SE_detector.cpp
 
 First, go to the directory where SE_detector.cpp is located (se_detector). Then type the following into the command line: g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include
 
