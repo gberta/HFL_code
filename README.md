@@ -14,7 +14,7 @@ year = {2015}
 
 ## Installation
 
-* Caffe Deep Learning library and its Python Wrapper (http://caffe.berkeleyvision.org/installation.html)
+* Caffe Deep Learning library and its Python Wrapper [(http://caffe.berkeleyvision.org/installation.html](http://caffe.berkeleyvision.org/installation.html)
 
 ⋅⋅⋅All of the required files are already included in the source code. However, Caffe and its python wrapper needs to be compiled according to the instructions in http://caffe.berkeleyvision.org/installation.html. 
 
@@ -36,7 +36,7 @@ year = {2015}
 
 ## Usage
 
-First, download the VGG model from https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md. The model file then needs to be stored in 'examples/VGG/' and should be named as 'VGG_model'
+First, download the VGG model from [https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md](https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md). The model file then needs to be stored in 'examples/VGG/' and should be named as 'VGG_model'
 
 Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You will find four versions of HFL detector:
 
@@ -45,7 +45,9 @@ Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You wil
 3. ‘HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries fast but with slightly lower performance quality.
 4. 'HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries with good performance quality but at a slightly lower speed.
 
-In each of these files you need to specify the Caffe root directory path. (Line 157 and Line 225 in CPU and GPU versions respectively). Finally, to run HFL detector type "python HFL_demo_cpu_fast.py <image_file_name> <output_file_name>” in the command line.
+In each of these files you need to specify the Caffe root directory path. (Line 157 and Line 225 in CPU and GPU versions respectively). Finally, to run HFL detector type:
+
+python HFL_demo_cpu_fast.py image_file_name output_file_name
 
 
 ## Misc. Notes
