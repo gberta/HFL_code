@@ -1,13 +1,10 @@
-###################################################################
-#                                                                 #
-#    High-for-Low (HFL) Boundary Detector                         #
-#    Gedas Bertasius gberta-(at)-seas-(dot)-upenn-(dot)-edu       #
-#                                                                 #
-###################################################################
+<snippet>
+  <content><![CDATA[
+# ${1: HFL Boundary Detector}
 
-1. Introduction.
+This is the High-for-Low (HFL) Boundary Detector documentation. Our method produces semantic boundaries and outperforms state-of-the-art methods in boundary detection on BSDS500 dataset. This work has been published in ICCV 2015 Conference.
 
-Here we present a High-for-Low (HFL) Boundary Detector documentation. Our method produces semantic boundaries and outperforms state-of-the-art methods in boundary detection on BSDS500 dataset (as of 04/20/2015).
+Citation:
 
 @InProceedings{gberta_2015_ICCV,
 author = {Gedas Bertasius and Jianbo Shi and Lorenzo Torresani},
@@ -18,16 +15,12 @@ month = {December},
 year = {2015}
 }
 
-
-###################################################################
-
-2. Installation Requirements.
-
+## Installation
 a) Caffe Deep Learning library and its Python Wrapper (http://caffe.berkeleyvision.org/installation.html)
 
 All of the required files are already included in the source code. However, Caffe and its python wrapper needs to be compiled according to the instructions in http://caffe.berkeleyvision.org/installation.html. 
 
-c) OpenCV 3.0 (source code is included in this package)
+b) OpenCV 3.0 (source code is included in this package)
  
 Open CV needs to be compiled using the following instructions:
 
@@ -38,41 +31,32 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/path/to/local/install
 make -j8
 make install
 
-d) Compiling SE_detector.cpp
+c) Compiling SE_detector.cpp
 
-1) Go to the directory where SE_detector.cpp is located 
-2) Type the following into the command line: g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include
-
+First, go to the directory where SE_detector.cpp is located (se_detector). Then type the following into the command line: g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include
 
 
-###################################################################
+## Usage
 
-3. Getting Started.
+First, download the VGG model from https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md. The model file then needs to be stored in 'examples/VGG/' and should be named as 'VGG_model'
 
-- Download the VGG model from https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md. The model file then needs to be stored in 'examples/VGG/' and should be named as 'VGG_model'
+Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You will find four versions of HFL detector:
 
-- From the root directory, go to ‘caffe/examples/HFL_detector/‘
+1. ‘HFL_demo_cpu_fast.py’: CPU version, that predicts boundaries fast but with slightly lower performance quality.
+2. ‘HFL_demo_cpu_accurate.py’: CPU version, that predicts boundaries with good performance quality but at a slightly lower speed.
+3. ‘HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries fast but with slightly lower performance quality.
+4. 'HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries with good performance quality but at a slightly lower speed.
 
-- There are four versions of HFL detector: 
-  1) ‘HFL_demo_cpu_fast.py’: CPU version, that predicts boundaries fast but with slightly lower performance quality.
-  2) ‘HFL_demo_cpu_accurate.py’: CPU version, that predicts boundaries with good performance quality but at a slightly lower speed.
-  3) ‘HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries fast but with slightly lower performance quality.
-  4) 'HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries with good performance quality but at a slightly lower speed.
-
--In each of these files you need to specify the Caffe root directory path. (Line 157 and Line 225 in CPU and GPU versions respectively)
-
--To run HFL detector type "python HFL_demo_cpu_fast.py <image_file_name> <output_file_name>” in the command line.
+In each of these files you need to specify the Caffe root directory path. (Line 157 and Line 225 in CPU and GPU versions respectively). Finally, to run HFL detector type "python HFL_demo_cpu_fast.py <image_file_name> <output_file_name>” in the command line.
 
 
-###################################################################
+## Misc. Notes
 
-4. Misc. Notes:
+1. For highest speed it is recommended to run the HFL detector on GPU. However, it can also be used with CPUs.
+2. The network should be cached in memory for higher efficiency.
+3. Due to some implementation differences, the results achieved by this HFL version and the results presented in our ICCV paper are a bit different.
 
--For highest speed it is recommended to run the HFL detector on GPU. However, it can also be used with CPUs.
- 
--The network should be cached in memory for higher efficiency.
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
 
--Due to some implementation differences, the results achieved by this HFL version and the results presented in our ICCV paper are a bit different.
-
-
-###################################################################
