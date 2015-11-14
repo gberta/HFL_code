@@ -1,5 +1,3 @@
-<snippet>
-  <content><![CDATA[
 # HFL Boundary Detector
 
 This is the High-for-Low (HFL) Boundary Detector documentation. Our method produces semantic boundaries and outperforms state-of-the-art methods in boundary detection on BSDS500 dataset. This work has been published in ICCV 2015 Conference.
@@ -54,7 +52,4 @@ In each of these files you need to specify the Caffe root directory path. (Line 
 2. The network should be cached in memory for higher efficiency.
 3. Due to some implementation differences, the results achieved by this HFL version and the results presented in our ICCV paper are a bit different.
 
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
 
