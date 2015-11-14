@@ -1,0 +1,86 @@
+# CUDA directory contains bin/ and lib/ directories that we need.
+CUDA_DIR := /usr/local/cuda-6.0
+
+# CUDA architecture setting.
+CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \
+    -gencode arch=compute_20,code=sm_21 \
+    -gencode arch=compute_30,code=sm_30 \
+    -gencode arch=compute_35,code=sm_35
+
+# MKL directory contains include/ and lib/ directions that we need.
+MKL_DIR := /share/apps/intel/mkl
+
+BOOST_DIR := /home/anthill/gedas/gb/cs89_dl/boost_lib/
+
+# NOTE: this is required only if you will compile the matlab interface.
+# MATLAB directory should contain the mex binary in /bin
+MATLAB_DIR := /share/apps/matlab2012b
+
+# NOTE: this is required only if you will compile the python interface.
+# We need to be able to find Python.h and numpy/arrayobject.h.
+#PYTHON_INCLUDES := /usr/include/python2.7 \
+#    /usr/local/lib/python2.7/dist-packages/numpy/core/include
+
+#PYTHON_INCLUDES := /export/apps/Python2.7/include/python2.7 \
+#    /export/apps/Python2.7/lib/python2.7/site-packages/numpy/core/include
+
+# Anaconda Python distribution is quite popular. Include path:
+ PYTHON_INCLUDE := $(HOME)/anaconda/include \
+ 		 $(HOME)/anaconda/include/python2.7 \
+ 		 $(HOME)/anaconda/lib/python2.7/site-packages/numpy/core/include \
+ 		 /usr/include/python2.7/
+
+# We need to be able to find libpythonX.X.so or .dylib.
+#PYTHON_LIB := /usr/local/lib
+
+#PYTHON_LIB := /export/apps/Python2.7/lib
+
+PYTHON_LIB := $(HOME)/anaconda/lib
+
+#GLOG Lib and Includes
+
+GLOG_INCLUDES := /share/apps/glog/0.3.3/include
+GLOG_LIB := /share/apps/glog/0.3.3/lib
+
+#OpenCV Lib and Includes
+
+OPENCV_INCLUDES := /share/apps/opencv/2.4.6/include
+OPENCV_LIB := /share/apps/opencv/2.4.6/lib
+
+#LEVELDB
+
+LEVELDB_INCLUDES := /home/anthill/vlg/software/libraries/leveldb-1.15.0/include
+LEVELDB_LIB := /home/anthill/vlg/software/libraries/leveldb-1.15.0
+
+#Snappy
+
+SNAPPY_INCLUDES := /home/anthill/vlg/software/libraries/snappy/include
+SNAPPY_LIB := /home/anthill/vlg/software/libraries/snappy/lib
+
+#Protobuf
+
+PROTOBUF_INCLUDES := /home/anthill/vlg/software/libraries/protobuf/include
+PROTOBUF_LIB := /home/anthill/vlg/software/libraries/protobuf/lib
+
+#hdf5
+
+HDF5_INCLUDES := /home/anthill/gedas/gb/cs89_dl/hdf5_library/include
+HDF5_LIB := /home/anthill/gedas/gb/cs89_dl/hdf5_library/lib
+
+#boost
+
+BOOST_INCLUDES := /home/anthill/gedas/gb/cs89_dl/boost_lib/include
+BOOST_LIB := /home/anthill/gedas/gb/cs89_dl/boost_lib/lib
+
+
+# Whatever else you find you need goes here.
+INCLUDE_DIRS := $(BOOST_INCLUDES) $(HDF5_INCLUDES) $(PROTOBUF_INCLUDES)  $(SNAPPY_INCLUDES)  $(LEVELDB_INCLUDES)  $(OPENCV_INCLUDES) $(GLOG_INCLUDES) $(PYTHON_INCLUDE) /usr/local/include
+LIBRARY_DIRS := $(BOOST_LIB) $(HDF5_LIB) $(PROTOBUF_LIB)  $(SNAPPY_LIB)  $(LEVELDB_LIB)  $(OPENCV_LIB)  $(GLOG_LIB) $(PYTHON_LIB) /usr/lib /usr/local/lib
+
+# For OS X, use clang++.
+CXX := /usr/bin/g++
+# For OS X 10.9, use libstdc++ instead of libc++ for CUDA compatibility.
+#CXXFLAGS := -stdlib=libstdc++
+
+BUILD_DIR := build
+DISTRIBUTE_DIR := distribute
