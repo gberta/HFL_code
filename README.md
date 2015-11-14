@@ -15,20 +15,20 @@ year = {2015}
 
 * Caffe Deep Learning library and its Python Wrapper
 
-The required files are already included. Caffe and its python wrapper need to be compiled as instructed in http://caffe.berkeleyvision.org/installation.html. 
+	The required files are already included. Caffe and its python wrapper need to be compiled as instructed in http://caffe.berkeleyvision.org/installation.html. 
 
-* OpenCV 3.0 (source code is included in this package)
+* OpenCV 3.0 (source code is included in this package):
  
-Open CV needs to be compiled using the following instructions:
+	Open CV needs to be compiled using the following instructions:
 
-cd PATH/TO/opencv  
-mkdir release  
-cd release  
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/path/to/local/install/directory/ -D WITH_CUDA=OFF ..  
-make -j8  
-make install  
+	cd PATH/TO/opencv  
+	mkdir release  
+	cd release  
+	cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/path/to/local/install/directory/ -D WITH_CUDA=OFF ..  
+	make -j8  
+	make install  
 
-* Compiling SE_detector.cpp
+* Compiling SE_detector.cpp:
 
 	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include⋅⋅
 
