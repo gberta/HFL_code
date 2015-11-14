@@ -2,9 +2,7 @@
 
 This is the High-for-Low (HFL) Boundary Detector documentation. Our method produces semantic boundaries and outperforms state-of-the-art methods in boundary detection on BSDS500 dataset. This work has been published in ICCV 2015 Conference.
 
-Citation:
-@InProceedings{gberta_2015_ICCV,
-author = {Gedas Bertasius and Jianbo Shi and Lorenzo Torresani},
+Citation:  @InProceedings{gberta_2015_ICCV,  author = {Gedas Bertasius and Jianbo Shi and Lorenzo Torresani},
 title = {High-for-Low and Low-for-High:
 Efficient Boundary Detection from Deep Object Features and its Applications to High-Level Vision},
 booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
