@@ -15,7 +15,7 @@ year = {2015}
 
 * Caffe Deep Learning library and its Python Wrapper
 
-All of the required files are already included in the source code. However, Caffe and its python wrapper needs to be compiled according to the instructions in http://caffe.berkeleyvision.org/installation.html. 
+The required files are already included. Caffe and its python wrapper need to be compiled as instructed in http://caffe.berkeleyvision.org/installation.html. 
 
 * OpenCV 3.0 (source code is included in this package)
  
