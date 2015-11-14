@@ -47,7 +47,7 @@ Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You wil
 
 In each of these files you need to specify the Caffe root directory path. (Line 157 and Line 225 in CPU and GPU versions respectively). Finally, to run HFL detector type:
 
-*python HFL_demo_cpu_fast.py <image_file_name> <output_file_name>*
+python HFL_demo_cpu_fast.py image_file_name output_file_name
 
 
 ## Misc. Notes
