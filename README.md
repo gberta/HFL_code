@@ -31,7 +31,6 @@ make install
 * Compiling SE_detector.cpp
 
 	Go to the 'se_detector' directory and type:  
-	
 	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include⋅⋅
 
 
