@@ -25,10 +25,15 @@ b) OpenCV 3.0 (source code is included in this package)
 Open CV needs to be compiled using the following instructions:
 
 cd PATH/TO/opencv
+
 mkdir release
+
 cd release
+
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/path/to/local/install/directory/ -D WITH_CUDA=OFF ..
+
 make -j8
+
 make install
 
 c) Compiling SE_detector.cpp
