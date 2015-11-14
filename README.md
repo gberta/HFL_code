@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[
-# ${1: HFL Boundary Detector}
+## HFL Boundary Detector
 
 This is the High-for-Low (HFL) Boundary Detector documentation. Our method produces semantic boundaries and outperforms state-of-the-art methods in boundary detection on BSDS500 dataset. This work has been published in ICCV 2015 Conference.
 
