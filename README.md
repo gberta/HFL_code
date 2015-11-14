@@ -13,11 +13,11 @@ year = {2015}
 
 ## Installation
 
-* Caffe Deep Learning library and its Python Wrapper
+1. Caffe Deep Learning library and its Python Wrapper
 
 	The required files are already included. Caffe and its python wrapper need to be compiled as instructed in http://caffe.berkeleyvision.org/installation.html. 
 
-* OpenCV 3.0 (source code is included in this package):
+2. OpenCV 3.0 (source code is included in this package):
  
 	Open CV needs to be compiled using the following instructions:
 
@@ -28,7 +28,7 @@ year = {2015}
 	make -j8  
 	make install  
 
-* Compiling SE_detector.cpp:
+3. Compiling SE_detector.cpp:
 
 	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include⋅⋅
 
@@ -46,7 +46,7 @@ Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You wil
 
 In each of these files you need to specify the Caffe root directory path. (Line 157 and Line 225 in CPU and GPU versions respectively). Finally, to run HFL detector type:
 
-python HFL_demo_cpu_fast.py image_file_name output_file_name
+python HFL_demo_cpu_fast.py input.jpg output.jpg
 
 
 ## Notes
