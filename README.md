@@ -30,8 +30,9 @@ make install
 
 * Compiling SE_detector.cpp
 
-First, go to the directory where SE_detector.cpp is located (se_detector). Then type the following into the command line:  
-g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include⋅⋅
+	First, go to the directory where SE_detector.cpp is located (se_detector). Then type the following into the command line:  
+	
+	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include⋅⋅
 
 
 ## Usage
@@ -50,7 +51,7 @@ In each of these files you need to specify the Caffe root directory path. (Line 
 python HFL_demo_cpu_fast.py image_file_name output_file_name
 
 
-## Misc. Notes
+## Notes
 
 1. For highest speed it is recommended to run the HFL detector on GPU. However, it can also be used with CPUs.
 2. The network should be cached in memory for higher efficiency.
