@@ -30,12 +30,12 @@ year = {2015}
 
 3. Compiling SE_detector.cpp:
 
-	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPENCV/include⋅⋅
+	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPENCV/include
 
 
 ## Usage
 
-First, download the VGG model from https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md. The model file then needs to be stored in 'examples/VGG/' and should be named as 'VGG_model'
+First, download the VGG model from http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_19_layers.caffemodel. The model file then needs to be stored in 'examples/VGG/' and should be named as 'VGG_model'
 
 Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You will find four versions of HFL detector:
 
@@ -44,7 +44,7 @@ Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You wil
 3. ‘HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries fast but with slightly lower performance quality.
 4. 'HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries with good performance quality but at a slightly lower speed.
 
-In each of these files you need to specify the Caffe root directory path. (Line 157 and Line 225 in CPU and GPU versions respectively). Finally, to run HFL detector type:
+In each of these files you need to specify the Caffe root directory path. (See Lines 144 and Line 196 in CPU and GPU source code versions respectively). Finally, to run HFL detector type:
 
 python HFL_demo_cpu_fast.py input.jpg output.jpg
 

@@ -22,7 +22,7 @@ MATLAB_DIR := /share/apps/matlab2012b
 #    /usr/local/lib/python2.7/dist-packages/numpy/core/include
 
 #PYTHON_INCLUDES := /export/apps/Python2.7/include/python2.7 \
-#    /export/apps/Python2.7/lib/python2.7/site-packages/numpy/core/include
+    /export/apps/Python2.7/lib/python2.7/site-packages/numpy/core/include
 
 # Anaconda Python distribution is quite popular. Include path:
  PYTHON_INCLUDE := $(HOME)/anaconda/include \

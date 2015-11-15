@@ -189,6 +189,9 @@ else:
   
 print 'Processing image ' + str(name) + '...'
 
+
+
+
 ### SPECIFICATION OF PATHS #######
 caffe_root = '/PATH/TO/CAFFE/ROOT/DIR/'  # this file is expected to be in {caffe_root}/examples
 sys.path.insert(0, caffe_root + 'python')
