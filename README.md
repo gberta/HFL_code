@@ -13,13 +13,13 @@ year = {2015}
 
 ## Installation
 
-1. Caffe Deep Learning library and its Python Wrapper
+1. Caffe Deep Learning library and its Python Wrapper:
 
 	Caffe source code is included. Caffe and its python wrapper need to be compiled as instructed in http://caffe.berkeleyvision.org/installation.html. 
 
-2. OpenCV 3.0:
+2. OpenCV-3.0:
  
-	Open CV 3.0 source code is included in this package. Open CV 3.0 needs to be compiled using the following instructions:
+	OpenCV-3.0 source code is included in this package. OpenCV-3.0 needs to be compiled using the following instructions:
 
 	cd PATH/TO/opencv  
 	mkdir release  
@@ -30,7 +30,7 @@ year = {2015}
 
 3. Compiling SE_detector.cpp:
 
-	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPECNV/include⋅⋅
+	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPENCV/include⋅⋅
 
 
 ## Usage
@@ -51,8 +51,8 @@ python HFL_demo_cpu_fast.py input.jpg output.jpg
 
 ## Notes
 
-1. For highest speed it is recommended to run the HFL detector on GPU. However, it can also be used with CPUs.
+1. For the highest speed it is recommended to run the HFL boundary detector on GPU. However, it can also be used with CPUs.
 2. The network should be cached in memory for higher efficiency.
-3. Due to some implementation differences, the results achieved by this HFL version and the results presented in our ICCV paper are a bit different.
+3. Due to some implementation differences, the results achieved by this HFL version and the results presented in our ICCV paper are slightly different.
 
 
