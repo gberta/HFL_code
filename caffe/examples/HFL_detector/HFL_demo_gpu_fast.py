@@ -78,9 +78,6 @@ def get_probs(a3):
 
 def get_features(filter_blob,orig_cords,orig_dim):
  
-    #print 'Get features...\n'
-    time1 = time.time()
-    #time3 = time.time()
 
     dist=np.zeros((orig_cords.shape[0],4))
     cords=np.zeros((orig_cords.shape[0],4))

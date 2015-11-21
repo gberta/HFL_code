@@ -78,9 +78,6 @@ def get_probs(a3):
 
 def get_features(filter_blob,orig_cords,orig_dim):
  
-    #print 'Get features...\n'
-    time1 = time.time()
-    #time3 = time.time()
 
     dist=np.zeros((orig_cords.shape[0],4))
     cords=np.zeros((orig_cords.shape[0],4))
@@ -170,8 +167,6 @@ def get_features(filter_blob,orig_cords,orig_dim):
     return vals
 
 
-
-sys.exit(1)
 
 input_img_file=sys.argv[1] #input image file
 output_file=sys.argv[2]
