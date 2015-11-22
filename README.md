@@ -34,7 +34,7 @@ year = {2015}
 
 4. Cudamat:
 
-	To run HFL on GPU, you would need to install Cudamat as well. Download the code from https://github.com/cudamat/cudamat. Then install the software using the command:
+	To run HFL code on GPU, you will need to install Cudamat. Download the code from https://github.com/cudamat/cudamat. Then install the software using the command:
 
 	python setup.py install --user
 
