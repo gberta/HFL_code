@@ -32,6 +32,14 @@ year = {2015}
 
 	g++ SE_detector.cpp -o SE_detector -L/PATH/TO/OPENCV/lib -lopencv_imgcodecs -lopencv_highgui -lopencv_ximgproc -lopencv_core -lopencv_imgproc -I/PATH/TO/OPENCV/include
 
+4. Cudamat:
+
+	To run HFL on GPU, you would need to install Cudamat as well. Download the code from https://github.com/cudamat/cudamat. Then install the software using the command:
+
+	python setup.py install --user
+
+	After the installation is complete, add the Cudamat library path to the PYTHONPATH system variable.
+
 
 ## Usage
 
@@ -44,7 +52,7 @@ Next, from the root directory, go to ‘caffe/examples/HFL_detector/‘. You wil
 3. ‘HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries fast but with slightly lower performance quality.
 4. 'HFL_demo_gpu_fast.py’: GPU version, that predicts boundaries with good performance quality but at a slightly lower speed.
 
-In each of these files you need to specify the Caffe root directory path. (See Lines 144 and Line 196 in CPU and GPU source code versions respectively). Finally, to run HFL detector type:
+IMPORTANT: In each of these files you need to specify the Caffe root directory path. (See Lines 144,144,179 and 153 in the 4 versions respectively). Finally, to run HFL detector type:
 
 python HFL_demo_cpu_fast.py input.jpg output.jpg
 
@@ -53,6 +61,6 @@ python HFL_demo_cpu_fast.py input.jpg output.jpg
 
 1. For the highest speed it is recommended to run the HFL boundary detector on GPU. However, it can also be used with CPUs.
 2. The network should be cached in memory for higher efficiency.
-3. Due to some implementation differences, the results achieved by this HFL version and the results presented in our ICCV paper are slightly different.
+3. Due to some implementation differences, the results achieved by this HFL version and the results presented in our ICCV paper are a bit different.
 
 

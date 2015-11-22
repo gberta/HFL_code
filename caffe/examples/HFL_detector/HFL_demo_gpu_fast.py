@@ -24,8 +24,6 @@ import cudamat as cm
 
 import sys
 
-#print numpy.show_config() 
-#sys.exit(1)
 
 def get_probs(a3):
    probs=a3
@@ -143,16 +141,9 @@ def get_features(filter_blob,orig_cords,orig_dim):
 
     unq_indices, I=np.unique(indices,return_inverse=True)
     U=unq_indices.astype(int)
-
-
-    
-
        
     vals=filters[:,U]
-    #vals=filters[U,:]
 
-       
-    #if ch>256:
     vals=gp.garray(vals)
     #vals=np.transpose(vals)
    
@@ -163,9 +154,6 @@ def get_features(filter_blob,orig_cords,orig_dim):
 
     return vals
 
-
-
-#sys.exit(1)
 
 input_img_file=sys.argv[1] #input image file
 output_file=sys.argv[2]
@@ -185,8 +173,6 @@ else:
    name=arr[0]
   
 print 'Processing image ' + str(name) + '...'
-
-
 
 
 ### SPECIFICATION OF PATHS #######

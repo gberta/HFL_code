@@ -77,9 +77,7 @@ def get_probs(a3):
    return probs
 
 def get_features(filter_blob,orig_cords,orig_dim):
- 
 
-    dist=np.zeros((orig_cords.shape[0],4))
     cords=np.zeros((orig_cords.shape[0],4))
     indices=np.zeros((orig_cords.shape[0],4))
 
@@ -101,70 +99,34 @@ def get_features(filter_blob,orig_cords,orig_dim):
     cur_row=orig_row_norm*cur_height
     cur_col=orig_col_norm*cur_width
 
-
     
-    
+   
     cords[:,0]=np.clip(np.floor(cur_row),0,cur_height-1)
     cords[:,1]=np.clip(np.ceil(cur_row),0,cur_height-1)
     cords[:,2]=np.clip(np.floor(cur_col),0,cur_width-1)
     cords[:,3]=np.clip(np.ceil(cur_col),0,cur_width-1)
 
     filters=np.reshape(filter_blob,(filter_blob.shape[0],filter_blob.shape[1]*filter_blob.shape[2]))
-    #filters=gp.garray(filters)
-
-    
-
-    dist[:,0]=abs(cur_row-cords[:,0])+abs(cur_col-cords[:,2])
-    dist[:,1]=abs(cur_row-cords[:,0])+abs(cur_col-cords[:,3])
-    dist[:,2]=abs(cur_row-cords[:,1])+abs(cur_col-cords[:,2])
-    dist[:,3]=abs(cur_row-cords[:,1])+abs(cur_col-cords[:,3])
-
-    #print dist.shape
-    min_ind=np.argmin(dist,1)
-    #min_ind=np.reshape(min_ind,(1,num_rows))
-  
-    ord=np.arange(num_rows)
-    ord=ord*4+min_ind
 
     indices[:,0]=cords[:,0]*cur_width+cords[:,2]
     indices[:,1]=cords[:,0]*cur_width+cords[:,3]
     indices[:,2]=cords[:,1]*cur_width+cords[:,2]
     indices[:,3]=cords[:,1]*cur_width+cords[:,3]
 
-
-
-    indices=np.reshape(indices,(1,num_rows*4))
-
-
-    temp=indices[:,ord]
-    temp=np.reshape(temp,(num_rows,1))
- 
-    indices=temp.astype(int)
-
-
-
-    unq_indices, I=np.unique(indices,return_inverse=True)
-    U=unq_indices.astype(int)
-
-
+    indices=np.reshape(indices,(1,4*indices.shape[0]))
     
+    indices=indices.astype(int)
 
-       
-    vals=filters[:,U]
-    #vals=filters[U,:]
-
-       
-    #if ch>256:
+    vals=filters[:,indices]
+    vals=np.reshape(vals,(ch,num_rows,4))
+    
+    vals=np.sum(vals,2)*0.25
+ 
     vals=gp.garray(vals)
-    #vals=np.transpose(vals)
-   
-
-    vals=vals[:,I]
    
     vals=vals.T
 
-
-    return vals
+    return val
 
 
 
